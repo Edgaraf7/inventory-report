@@ -10,7 +10,8 @@ def test_product_report():
         "manufacturing_date": "01-05-2021",
         "expiration_date": "02-06-2023",
         "serial_number": "TY68 409C JJ43 ASD1 PL2F",
-        "storage_instructions": "precisa ser armazenado em local protegido da luz",
+        "storage_instructions":
+        "precisa ser armazenado em local protegido da luz",
     }
 
     product = Product(**product_data)
@@ -31,7 +32,7 @@ def test_product_report():
     assert "valid until 02-06-2023" in str(product)
 
     # Test Trecho 6
-    assert "must be stored according to the following instructions: precisa ser armazenado em local protegido da luz" in str(product)
+    assert "must be stored accordingto the following instructions: precisa ser armazenado em local protegido da luz" in str(product)
 
 
 if __name__ == "__main__":

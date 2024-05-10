@@ -4,6 +4,7 @@ from inventory_report.product import Product
 import json
 import csv
 
+
 class Importer(ABC):
     def __init__(self, path: str):
         self.path = path
@@ -17,7 +18,7 @@ class JsonImporter(Importer):
     def import_data(self) -> List[Product]:
         with open(self.path, "r") as file:
             data = json.load(file)
-        
+
         products = []
         for item in data:
             product = Product(
@@ -30,7 +31,7 @@ class JsonImporter(Importer):
                 storage_instructions=item["storage_instructions"]
             )
             products.append(product)
-        
+
         return products
 
 
@@ -51,7 +52,7 @@ class CsvImporter(Importer):
                     storage_instructions=row["storage_instructions"]
                 )
                 products.append(product)
-        
+
         return products
 
 

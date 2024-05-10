@@ -2,6 +2,7 @@ def test_create_product() -> None:
     raise NotImplementedError
 from inventory_report.product import Product
 
+
 def test_create_product() -> None:
     product_data = {
         "id": "1",
